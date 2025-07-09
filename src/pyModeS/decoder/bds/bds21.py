@@ -5,6 +5,27 @@ from pyModeS import common
 
 CHAR_LOOKUP = "#ABCDEFGHIJKLMNOPQRSTUVWXYZ##### ###############0123456789######"
 
+def is21(msg: str) -> bool:
+    """Check if a message is likely to be BDS code 2,1
+
+    Args:
+        msg (str): 28 hexdigits string
+
+    Returns:
+        bool: True or False
+    """
+    if common.allzeros(msg):
+        return False
+
+    d = common.hex2bin(common.data(msg))
+
+    # Last 13 bits should be zero (airline registration is rarely filled)
+    if d[43:56] != "0000000000000":
+        return False
+
+    return ar21(msg) is not None
+
+
 def ar21(msg: str) -> Optional[str]:
     """
     Args:

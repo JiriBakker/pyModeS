@@ -11,6 +11,15 @@ def test_bds20_callsign():
     assert commb.cs20("A000083E202CC371C31DE0AA1CCF") == "KLM1017_"
     assert commb.cs20("A0001993202422F2E37CE038738E") == "IBK2873_"
 
+def test_bds21_ar21():
+    assert bds.bds21.ar21("A00002BF940F19680C0000000000") == "JA824A"
+    assert bds.bds21.ar21("A00002988230C3B470A000000000") == "AFFGZNE"
+    assert bds.bds21.ar21("A0000793AC45AB164C0000000000") == "VH#VKI"
+
+    assert commb.ar21("A00002BF940F19680C0000000000") == "JA824A"
+    assert commb.ar21("A00002988230C3B470A000000000") == "AFFGZNE"
+    assert commb.ar21("A0000793AC45AB164C0000000000") == "VH#VKI"
+
 
 def test_bds40_functions():
     assert bds.bds40.selalt40mcp("A000029C85E42F313000007047D3") == 3008

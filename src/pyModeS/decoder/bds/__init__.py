@@ -160,6 +160,7 @@ def infer(msg: str, mrar: bool = False) -> Optional[str]:
     IS10 = bds10.is10(msg)
     IS17 = bds17.is17(msg)
     IS20 = bds20.is20(msg)
+    IS21 = bds21.is21(msg)
     IS30 = bds30.is30(msg)
     IS40 = bds40.is40(msg)
     IS50 = bds50.is50(msg)
@@ -173,6 +174,7 @@ def infer(msg: str, mrar: bool = False) -> Optional[str]:
                 "BDS10",
                 "BDS17",
                 "BDS20",
+                "BDS21",
                 "BDS30",
                 "BDS40",
                 "BDS44",
@@ -181,12 +183,12 @@ def infer(msg: str, mrar: bool = False) -> Optional[str]:
                 "BDS60",
             ]
         )
-        mask = [IS10, IS17, IS20, IS30, IS40, IS44, IS45, IS50, IS60]
+        mask = [IS10, IS17, IS20, IS21, IS30, IS40, IS44, IS45, IS50, IS60]
     else:
         allbds = np.array(
-            ["BDS10", "BDS17", "BDS20", "BDS30", "BDS40", "BDS50", "BDS60"]
+            ["BDS10", "BDS17", "BDS20", "BDS21", "BDS30", "BDS40", "BDS50", "BDS60"]
         )
-        mask = [IS10, IS17, IS20, IS30, IS40, IS50, IS60]
+        mask = [IS10, IS17, IS20, IS21, IS30, IS40, IS50, IS60]
 
     bds = ",".join(sorted(allbds[mask]))
 

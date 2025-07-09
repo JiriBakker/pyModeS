@@ -16,6 +16,7 @@ def test_bds_infer():
     assert bds.infer("A800178D10010080F50000D5893C") == "BDS10"
     assert bds.infer("A0000638FA81C10000000081A92F") == "BDS17"
     assert bds.infer("A0001838201584F23468207CDFA5") == "BDS20"
+    assert bds.infer("A0000793AC45AB164C0000000000") == "BDS21"
     assert bds.infer("A0001839CA3800315800007448D9") == "BDS40"
     assert bds.infer("A000139381951536E024D4CCF6B5") == "BDS50"
     assert bds.infer("A00004128F39F91A7E27C46ADC21") == "BDS60"

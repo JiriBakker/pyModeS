@@ -26,6 +26,7 @@ MRAR and MHR
 from .bds.bds10 import is10, ovc10
 from .bds.bds17 import is17, cap17
 from .bds.bds20 import is20, cs20
+from .bds.bds21 import is21, ar21
 from .bds.bds30 import is30
 
 # ELS - enhanced surveillance
@@ -51,6 +52,8 @@ __all__ = [
     "cap17",
     "is20",
     "cs20",
+    "is21",
+    "ar21",
     "is30",
     "is40",
     "selalt40fms",
