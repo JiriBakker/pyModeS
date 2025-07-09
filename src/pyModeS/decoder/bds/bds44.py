@@ -53,7 +53,7 @@ def is44(msg: str) -> bool:
     # If all values are zero, the message was likely not MRAR
     if vw is not None and vw == 0 and dw is not None and dw == 0 and temp is not None and temp == 0:
         return False
-    
+
     if vw is None and dw is None and temp is None:
         return False
 
